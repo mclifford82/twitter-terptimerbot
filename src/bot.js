@@ -1,10 +1,21 @@
 const Twit = require('twit')
-const config = require('./config')
+
+const config = {
+  consumer_key: 'MXv9gzJIO1y54AfEvAO2JTT3j',
+  consumer_secret: 'UnnhvdUQKZfCGlobKQQgoHhrvYnykHnIL55qZhp38XPoNbTIAG',
+  access_token: '980011366122643456-pA2mTQbJTwyMJKBICkndWHaJUYEDs1R',
+  access_token_secret: 'HnEJaUpcccspcMW4vvQ9lZJ4iU0CQDtLQBTx2voMukbuv',
+}
 
 const bot = new Twit(config)
 
 const stream = bot.stream('statuses/filter', {
   track: '#terptimerbot, #tempsdownterpsup',
+})
+
+// Handle user events
+stream.on('user-event', (eventMsg) => {
+  console.log(JSON.stringify(eventMsg, undefined, 2))
 })
 
 // Handle incoming tweets
@@ -93,11 +104,6 @@ const postReplyWithText = (replyText, id_str) => {
 //     }
 //   },
 // )
-
-const userFollowsBot = (id) => {
-  // bot.get on followers/:id endpoint if it exists
-  // return true if user is found
-}
 
 // Follow a user back
 // bot.post(
