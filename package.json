@@ -1,0 +1,23 @@
+{
+  "name": "terptimer-twitterbot",
+  "version": "1.0.0",
+  "description": "A twitter bot to handle terp timer requests.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mclifford82/terptimer-twitterbot.git"
+  },
+  "author": "Martin Clifford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mclifford82/terptimer-twitterbot/issues"
+  },
+  "homepage": "https://github.com/mclifford82/terptimer-twitterbot#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "twit": "^2.2.9"
+  }
+}
